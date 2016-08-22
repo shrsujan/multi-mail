@@ -1,6 +1,6 @@
 {
   "name": "multi-mail",
-  "description": "Mailer tools for sending mail to multiple users as individual emails",
+  "description": "Mailer tool for sending mail to multiple users as individual emails",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
