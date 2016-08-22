@@ -1,0 +1,21 @@
+{
+  "name": "multi-mail",
+  "description": "Mailer tools for sending mail to multiple users as individual emails",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrsujan/multi-mail.git"
+  },
+  "author": "Sujan Shrestha <shrsujan2007@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+  	"mail",
+  	"nodemailer",
+  	"mailer",
+  	"mailer tool"
+  ],
+  "version": "1.0.0"
+}
