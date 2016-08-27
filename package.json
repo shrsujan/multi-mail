@@ -12,10 +12,14 @@
   "author": "Sujan Shrestha <shrsujan2007@gmail.com>",
   "license": "ISC",
   "keywords": [
-  	"mail",
-  	"nodemailer",
-  	"mailer",
-  	"mailer tool"
+    "mail",
+    "nodemailer",
+    "mailer",
+    "mailer tool"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "async": "^2.0.1",
+    "nodemailer": "^2.5.0"
+  }
 }
