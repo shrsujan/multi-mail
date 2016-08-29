@@ -43,12 +43,14 @@ module.exports = {
 
 			let report = {};
 			let client = nodemailer.createTransport(data.set);
-
-			async.forEachOf(receivers, function(receiver, key, callback){
+			async.eachSeries(receivers, function(receiver, callback){
 				data.mailOptions.to = receiver;
 				that.sender(client, data, report, function(err){
-					if(err == null) callback();
-					else callback(err);
+					if (err == null) {
+						callback();
+					} else {
+						callback(err);
+					}
 				});
 			}, function(){
 				cb(report);
@@ -56,18 +58,28 @@ module.exports = {
 		}
 	},
 
-	sender: function (client, mailData, report, callback) {
+	sender: function (client, mailData, report, cb) {
 		client.sendMail(mailData.mailOptions, function(err, result){
 		    if(err){
-		        callback(err);
+		        console.log(err);
+		        cb(err);
 		    }
 		    if(result) {
-				if(result.accepted.length) report[result.accepted[0]] = 'Sent';
-				if(result.rejected.length) report[result.rejected[0]] = 'Not sent';
-				if(typeof(result.pending) != 'undefined'){
-					if(result.pending.length) report[result.pending[0]] = 'Pending';
+				if(result.accepted.length){
+					console.log(result.accepted[0] + ": Sent");
+					report[result.accepted[0]] = 'Sent';
 				}
-		        callback(null);
+				if(result.rejected.length){
+					console.log(result.rejected[0] + ": Not sent");
+					report[result.rejected[0]] = 'Not sent';
+				}
+				if(typeof(result.pending) != 'undefined'){
+					if(result.pending.length){
+						console.log(result.pending[0] + ": Pending");
+						report[result.pending[0]] = 'Pending';
+					}
+				}
+		        cb(null);
 		    }
 		});
 	}
