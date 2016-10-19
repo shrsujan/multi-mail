@@ -59,7 +59,6 @@ module.exports = {
 	},
 
 	sender: function (client, mailData, report, cb) {
-		console.log(mailData);
 		client.sendMail(mailData.mailOptions, function(err, result){
 		    if(err){
 		        console.log(err);
