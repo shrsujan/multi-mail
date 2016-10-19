@@ -4,10 +4,10 @@ var mailer = require('./index');
 
 var mailConfig = {
 	service: 'gmail',
-	email: 'script@zyoba.com',
-    password: 'Nepal@+977',
-    from: 'me <sender@gmail.com>',
-	to: ['shrsujan2007@gmail.com', 'reney.roze987@gmail.com'],
+	email: 'youremail@gmail.com',
+    password: 'yourpassword',
+    from: 'YourName <youremail@gmail.com>',
+	to: ['receiver1@gmail.com', 'receiver2@gmail.com'],
     subject: 'test test'
 };
 
